@@ -20,6 +20,7 @@ const Wrapper = styled("div")<{ size: string }>`
   justify-content: center;
   align-items: center;
   background-color: #181717;
-  width: ${props => props.size};
-  height: ${props => (props.size === "500" ? "281px" : "169px")};
+  width: ${props => (props.size ? props.size : null)};
+  height: ${props =>
+    props.size ? (props.size === "500" ? "281px" : "169px") : null};
 `;

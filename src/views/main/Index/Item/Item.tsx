@@ -1,19 +1,20 @@
 import React, { PureComponent } from "react";
-import { IHistory, IMovie, ILocation } from "../../../types/interfaces";
-import IconPlus from "../../../icons/IconPlus";
-import Card from "../../../components/Card";
-import Avatar from "../../../components/Avatar";
-import DateString from "../../../components/DateString";
-import Rating from "../../../components/Rating";
+import { IHistory, IData, ILocation } from "../../../../types/interfaces";
+import Card from "../../../../components/Card";
+import Avatar from "../../../../components/Avatar";
+import DateString from "../../../../components/DateString";
+import Rating from "../../../../components/Rating";
 
 // ---------------
+
 interface IProps {
   history: IHistory;
   location: ILocation;
-  item: IMovie;
+  item: IData;
   index: number;
   size: string;
 }
+
 // ---------------
 export default class IndexItem extends PureComponent<IProps> {
   constructor(props: IProps) {
@@ -28,7 +29,7 @@ export default class IndexItem extends PureComponent<IProps> {
   render() {
     const { item, size } = this.props;
     const image = item.image_path
-      ? item.image_path.replace("@size", `w${this.props.size}`)
+      ? item.image_path.replace("@size", `original`)
       : null;
 
     return (

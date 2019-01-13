@@ -14,6 +14,6 @@ export default class MainHeader extends PureComponent {
 const Header = styled.header`
   height: 3rem;
   padding: 3rem;
-  margin-bottom: 3rem;
-  background-color: black;
+  margin-bottom: 0rem;
+  background-color: #121111;
 `;

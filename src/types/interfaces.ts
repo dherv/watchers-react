@@ -2,7 +2,7 @@ export interface IHistory {
   push: (url: string) => void;
 }
 
-export interface IMovie {
+export interface IData {
   id: string;
   title: string;
   image_path: string;
