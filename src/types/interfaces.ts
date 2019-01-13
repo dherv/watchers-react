@@ -16,3 +16,6 @@ export interface IMatch {
     id: string;
   };
 }
+export interface ILocation {
+  pathname: string;
+}

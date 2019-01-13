@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import Item from "./Item/Item";
 import styled from "styled-components";
-import { IHistory, IMovie } from "../../types/interfaces";
+import { IHistory, IMovie, ILocation } from "../../types/interfaces";
 import Main from "../../layouts/Main";
+import api from "../../api";
+
 interface IProps {
   history: IHistory;
+  location: ILocation;
 }
 
 interface IState {
@@ -12,7 +15,7 @@ interface IState {
   ready: boolean;
 }
 
-export default class App extends Component<IProps, IState> {
+export default class Index extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -21,13 +24,10 @@ export default class App extends Component<IProps, IState> {
     };
   }
   componentDidMount() {
-    fetch(`http://localhost:8000/api/movies`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        const movies = this.sortByDate(data);
-        this.setState({ movies, ready: true });
-      });
+    api.fetchData(`${this.props.location.pathname}`).then(data => {
+      const movies = this.sortByDate(data);
+      this.setState({ movies, ready: true });
+    });
   }
   sortByDate(data: IMovie[]) {
     return data.sort(
@@ -49,6 +49,7 @@ export default class App extends Component<IProps, IState> {
                 index={index}
                 size="500"
                 history={this.props.history}
+                location={this.props.location}
               />
             ))}
           </GridHead>
@@ -60,6 +61,7 @@ export default class App extends Component<IProps, IState> {
                 index={index}
                 size="300"
                 history={this.props.history}
+                location={this.props.location}
               />
             ))}
           </Grid>

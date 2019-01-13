@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { IHistory, IMovie } from "../../../types/interfaces";
+import { IHistory, IMovie, ILocation } from "../../../types/interfaces";
 import IconPlus from "../../../icons/IconPlus";
 import Card from "../../../components/Card";
 import Avatar from "../../../components/Avatar";
@@ -9,18 +9,21 @@ import Rating from "../../../components/Rating";
 // ---------------
 interface IProps {
   history: IHistory;
+  location: ILocation;
   item: IMovie;
   index: number;
   size: string;
 }
 // ---------------
-export default class MoviesItem extends PureComponent<IProps> {
+export default class IndexItem extends PureComponent<IProps> {
   constructor(props: IProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.history.push(`/movie/${this.props.item.id}`);
+    const path = this.props.location.pathname;
+    const id = this.props.item.id;
+    this.props.history.push(`${path}/${id}`);
   }
   render() {
     const { item, size } = this.props;
