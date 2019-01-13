@@ -28,9 +28,19 @@ export default class Index extends Component<IProps, IState> {
       ready: false
     };
     this.handleSort = this.handleSort.bind(this);
+    this.fetchAll = this.fetchAll.bind(this);
   }
   componentDidMount() {
-    api.fetchData(`${this.props.location.pathname}`).then(data => {
+    this.fetchAll();
+  }
+  componentDidUpdate(prevProps: IProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.fetchAll();
+    }
+  }
+
+  fetchAll() {
+    return api.fetchData(`${this.props.location.pathname}`).then(data => {
       const movies = sortByDate(data, "release_date", "asc");
       this.setState({ movies, ready: true });
     });

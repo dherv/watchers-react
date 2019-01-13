@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
+import Header from "./Header";
 
 export default class MainLayout extends PureComponent {
   render() {
@@ -15,4 +16,3 @@ const Page = styled.div``;
 const Main = styled.main`
   padding: 4rem;
 `;
-const Header = styled.header``;
