@@ -43,7 +43,7 @@ export default class IconMovie extends PureComponent<IProps> {
           <text
             x="50%"
             y="50%"
-            text-anchor="middle"
+            textAnchor="middle"
             style={{
               fontFamily: "Abel, sans-serif",
               fontSize: "0.8rem",
@@ -52,7 +52,7 @@ export default class IconMovie extends PureComponent<IProps> {
             }}
             // stroke="green"
             // stroke-width="1px"
-            alignment-baseline="central"
+            alignmentBaseline="central"
           >
             {rating}
           </text>

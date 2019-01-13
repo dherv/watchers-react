@@ -2,8 +2,6 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 
 export default class MainLayout extends PureComponent {
-  // Declare a new state variable, which we'll call "count"
-  //   const [count, setCount] = useState(0);
   render() {
     return (
       <Page>
@@ -13,10 +11,8 @@ export default class MainLayout extends PureComponent {
     );
   }
 }
-const Page = styled.div`
-  padding: 4rem;
-`;
+const Page = styled.div``;
 const Main = styled.main`
-  margin: 0 auto;
+  padding: 4rem;
 `;
 const Header = styled.header``;
