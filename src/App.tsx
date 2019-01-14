@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 // Components
-import Index from "./views/Index/Index";
-import Show from "./views/Show/Show";
+import Index from "./views/main/Index/Index";
+import Show from "./views/main/Show/Show";
 import Main from "./layouts/Main";
 
 export default class App extends Component {

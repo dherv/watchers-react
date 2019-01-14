@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from "react";
 import Item from "./Item/Item";
 import styled from "styled-components";
-import { IHistory, IMovie, ILocation } from "../../types/interfaces";
-import Main from "../../layouts/Main";
-import api from "../../api";
-import { sortByDate, sortByNumber, sortByString } from "../../helpers/filters";
+import { IHistory, IData, ILocation } from "../../../types/interfaces";
+import api from "../../../api";
+import {
+  sortByDate,
+  sortByNumber,
+  sortByString
+} from "../../../helpers/filters";
+
 import Nav from "./Nav";
 interface IProps {
   history: IHistory;
@@ -12,7 +16,7 @@ interface IProps {
 }
 
 interface IState {
-  movies: IMovie[];
+  movies: IData[];
   ready: boolean;
   type: string;
   sort: boolean;
@@ -38,7 +42,6 @@ export default class Index extends Component<IProps, IState> {
       this.fetchAll();
     }
   }
-
   fetchAll() {
     return api.fetchData(`${this.props.location.pathname}`).then(data => {
       const movies = sortByDate(data, "release_date", "asc");
