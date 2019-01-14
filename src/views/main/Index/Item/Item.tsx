@@ -28,8 +28,8 @@ export default class IndexItem extends PureComponent<IProps> {
   }
   render() {
     const { item, size } = this.props;
-    const image = item.image_path
-      ? item.image_path.replace("@size", `original`)
+    const image = item.backdrop_path
+      ? item.backdrop_path.replace("@size", `original`)
       : null;
 
     return (

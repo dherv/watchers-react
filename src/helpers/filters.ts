@@ -2,21 +2,12 @@ export const sortByDate = (
   data: any[],
   key: string,
   sort: "asc" | "desc" = "asc"
-) => {
-  console.log(data, key, sort);
-  console.log(
-    data.sort((a, b) => {
-      return sort.toLowerCase() === "asc"
-        ? Date.parse(b[key]) - Date.parse(a[key])
-        : Date.parse(a[key]) - Date.parse(b[key]);
-    })
-  );
-  return data.sort((a, b) => {
+) =>
+  data.sort((a, b) => {
     return sort.toLowerCase() === "asc"
       ? Date.parse(b[key]) - Date.parse(a[key])
       : Date.parse(a[key]) - Date.parse(b[key]);
   });
-};
 
 export const sortByNumber = (
   data: any[],

@@ -32,8 +32,8 @@ export default class Show extends PureComponent<IProps, IState> {
   render() {
     const { item } = this.state;
     const image =
-      item && item.image_path
-        ? item.image_path.replace("@size", `original`)
+      item && item.backdrop_path
+        ? item.backdrop_path.replace("@size", `original`)
         : null;
     return (
       this.state.ready && (
@@ -41,6 +41,14 @@ export default class Show extends PureComponent<IProps, IState> {
           <img src={image} />
           <Wrapper>
             <h1>{this.state.item.title}</h1>
+            <div>
+              <img
+                src={this.state.item.poster_path.replace("@size", `original`)}
+              />
+              <h5>{this.state.item.release_date}</h5>
+            </div>
+
+            <p>{this.state.item.description}</p>
           </Wrapper>
         </Grid>
       )
@@ -60,5 +68,25 @@ const Wrapper = styled.article`
     padding: 1rem 0;
     border-bottom: 1px solid #473a3a;
     font-weight: 300;
+  }
+
+  div {
+    display: flex
+    align-items: flex-start;
+    margin: 2rem 0;
+  }
+  img {
+    display: inline-block;
+  
+    max-width: 40%;
+    height: auto;
+    display: block;
+  }
+  h5 {
+    display: inline-block;
+    width: 50%;
+  }
+  p {
+    padding: 2rem 0;
   }
 `;
