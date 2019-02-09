@@ -40,7 +40,7 @@ const monthNamesShort = [
 export const formatDate = (string: string): string => {
   const date = new Date(string);
   const day = date.getDate();
-  const month = monthNamesShort[date.getMonth() + 1];
+  const month = monthNamesShort[date.getMonth()];
   const year = date.getFullYear();
   return `${month} ${day}, ${year}`;
 };

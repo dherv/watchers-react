@@ -37,15 +37,16 @@ export default class Index extends Component<IProps, IState> {
   componentDidMount() {
     this.fetchAll();
   }
+
   componentDidUpdate(prevProps: IProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
       this.fetchAll();
     }
   }
+
   fetchAll() {
-    return api.fetchData(`${this.props.location.pathname}`).then(data => {
-      const movies = sortByDate(data, "release_date", "asc");
-      this.setState({ movies, ready: true });
+    return api.fetchData(`${this.props.location.pathname}`).then(({ data }) => {
+      this.setState({ movies: data.data, ready: true });
     });
   }
 
@@ -84,8 +85,10 @@ export default class Index extends Component<IProps, IState> {
 
   render() {
     // need to separate top and the rest to display the grid correctly
-    const top = this.state.movies.slice(0, 3);
-    const rest = this.state.movies.slice(3);
+
+    const top = this.state.movies.length ? this.state.movies.slice(0, 3) : [];
+    const rest = this.state.movies.length ? this.state.movies.slice(3) : [];
+
     return (
       this.state.ready && (
         <Fragment>
