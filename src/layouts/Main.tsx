@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import Header from "./Header";
+import Header from "./Header/Header";
 
 export default class MainLayout extends PureComponent {
   render() {
