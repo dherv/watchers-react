@@ -14,5 +14,5 @@ export default class LayoutPage extends PureComponent {
 }
 const Page = styled.div``;
 const Main = styled.main`
-  padding: 4rem;
+  padding: 1rem;
 `;

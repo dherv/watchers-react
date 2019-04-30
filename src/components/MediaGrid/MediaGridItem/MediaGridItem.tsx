@@ -34,8 +34,26 @@ export default class MediaGridItem extends PureComponent<IProps> {
       : null;
 
     return (
-      <Card size={size} onClick={this.handleClick}>
+      <Card
+        size={size}
+        onClick={this.handleClick}
+        className={
+          this.props.index < 3
+            ? styles.top
+            : this.props.index === 3
+            ? `${styles.top} ${styles.regular}`
+            : styles.regular
+        }
+      >
         {image ? (
+          //           <picture alt="Description of image">
+
+          //   <source src={item.backdrop_path.replace("@size", `original`)}>
+
+          //   <source src={item.backdrop_path.replace("@size", `large`} media="(min-width: 400px)">
+
+          //   <img src={item.backdrop_path.replace("@size", `original`)} alt="description of image">
+          // </picture>
           <Card.Picture src={image} />
         ) : (
           <Avatar size={this.props.size} />

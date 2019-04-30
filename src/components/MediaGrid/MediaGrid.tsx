@@ -43,12 +43,12 @@ export default class MediaGrid extends Component<IProps, IState> {
 
   fetchAll() {
     return api.fetchData(`${this.props.location.pathname}`).then(({ data }) => {
-      this.setState({ movies: data.data, ready: true });
+      const movies = sortByDate(data.data, "release_date", "asc");
+      this.setState({ movies, ready: true });
     });
   }
 
   handleSort(type: string) {
-    console.log(type);
     let movies = [...this.state.movies];
     switch (type) {
       case "rating":
@@ -82,10 +82,8 @@ export default class MediaGrid extends Component<IProps, IState> {
 
   render() {
     // need to separate top and the rest to display the grid correctly
-
-    const top = this.state.movies.length ? this.state.movies.slice(0, 3) : [];
-    const rest = this.state.movies.length ? this.state.movies.slice(3) : [];
-
+    // const top = this.state.movies.slice(0, 4);
+    // const rest = this.state.movies.slice(4);
     return (
       this.state.ready && (
         <Fragment>
