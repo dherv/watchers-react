@@ -1,9 +1,10 @@
 import React, { PureComponent } from "react";
-import { IHistory, IData, ILocation } from "../../../../types/interfaces";
-import Card from "../../../../components/Card";
-import Avatar from "../../../../components/Avatar";
-import DateString from "../../../../components/DateString";
-import Rating from "../../../../components/Rating";
+import { IHistory, IData, ILocation } from "../../../types/interfaces";
+import Card from "../../Card";
+import Avatar from "../../Avatar";
+import DateString from "../../DateString";
+import Rating from "../../Rating";
+import styles from "../MediaGrid.module.css";
 
 // ---------------
 
@@ -16,7 +17,7 @@ interface IProps {
 }
 
 // ---------------
-export default class IndexItem extends PureComponent<IProps> {
+export default class MediaGridItem extends PureComponent<IProps> {
   constructor(props: IProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);

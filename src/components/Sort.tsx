@@ -12,7 +12,7 @@ function Item(props: { children: string; onClick: (type: string) => void }) {
   return <li onClick={handleClick}>{props.children}</li>;
 }
 
-export default class IndexNav extends PureComponent<IProps> {
+export default class Sort extends PureComponent<IProps> {
   render() {
     return (
       <nav>

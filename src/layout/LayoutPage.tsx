@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import Header from "./Header/Header";
+import Header from "./LayoutHeader/LayoutHeader";
 
-export default class MainLayout extends PureComponent {
+export default class LayoutPage extends PureComponent {
   render() {
     return (
       <Page>

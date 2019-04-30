@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from "react";
-import { IData, ILocation } from "../../../types/interfaces";
-import api from "../../../api";
+import { IData, ILocation } from "../../types/interfaces";
+import api from "../../api";
 import styled from "styled-components";
 
 interface IProps {
@@ -12,7 +12,7 @@ interface IState {
   item: IData | any;
   ready: boolean;
 }
-export default class Show extends PureComponent<IProps, IState> {
+export default class MoviePage extends PureComponent<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {

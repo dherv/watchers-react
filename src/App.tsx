@@ -2,21 +2,21 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 // Components
-import Index from "./views/main/Index/Index";
-import Show from "./views/main/Show/Show";
-import Main from "./layouts/Main";
+import MediaGrid from "./components/MediaGrid/MediaGrid";
+import MoviePage from "./views/MoviePage/MoviePage";
+import LayoutPage from "./layout/LayoutPage";
 
 export default class App extends Component {
   render() {
     return (
-      <Main>
+      <LayoutPage>
         <Switch>
-          <Route exact path="/movies" component={Index} />
-          <Route exact path="/movies/:id" component={Show} />
-          <Route exact path="/series" component={Index} />
-          <Route exact path="/series/:id" component={Show} />
+          <Route exact path="/movies" component={MediaGrid} />
+          <Route exact path="/movies/:id" component={MoviePage} />
+          <Route exact path="/series" component={MediaGrid} />
+          <Route exact path="/series/:id" component={MoviePage} />
         </Switch>
-      </Main>
+      </LayoutPage>
     );
   }
 }

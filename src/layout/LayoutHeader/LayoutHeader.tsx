@@ -1,17 +1,17 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import Nav from "../Nav";
-import Logo from "../Logo";
+import LayoutNav from "../LayoutNav/LayoutNav";
+import Logo from "../../components/Logo";
 
 // ---------------
 interface IProps {}
 
-export default class MainHeader extends PureComponent {
+export default class LayoutHeader extends PureComponent {
   render() {
     return (
       <Header>
         <Logo />
-        <Nav />
+        <LayoutNav />
       </Header>
     );
   }

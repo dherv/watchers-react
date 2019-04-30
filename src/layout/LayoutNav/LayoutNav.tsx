@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 interface IProps {}
 
-export default class MainNav extends PureComponent<IProps> {
+export default class LayoutNav extends PureComponent<IProps> {
   render() {
     return (
       <Nav>

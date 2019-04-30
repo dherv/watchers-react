@@ -1,15 +1,12 @@
 import React, { Component, Fragment } from "react";
-import Item from "./Item/Item";
+import Item from "./MediaGridItem/MediaGridItem";
 import styled from "styled-components";
-import { IHistory, IData, ILocation } from "../../../types/interfaces";
-import api from "../../../api";
-import {
-  sortByDate,
-  sortByNumber,
-  sortByString
-} from "../../../helpers/filters";
+import { IHistory, IData, ILocation } from "../../types/interfaces";
+import api from "../../api";
+import styles from "./MediaGrid.module.css";
+import { sortByDate, sortByNumber, sortByString } from "../../helpers/filters";
+import Sort from "../Sort";
 
-import Nav from "./Nav";
 interface IProps {
   history: IHistory;
   location: ILocation;
@@ -22,7 +19,7 @@ interface IState {
   sort: boolean;
 }
 
-export default class Index extends Component<IProps, IState> {
+export default class MediaGrid extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -92,31 +89,21 @@ export default class Index extends Component<IProps, IState> {
     return (
       this.state.ready && (
         <Fragment>
-          <Nav sort={this.handleSort} />
-          <GridHead>
-            {top.map((item, index) => (
-              <Item
-                key={item.id}
-                item={item}
-                index={index}
-                size="500"
-                history={this.props.history}
-                location={this.props.location}
-              />
-            ))}
-          </GridHead>
-          <Grid className="wrapper">
-            {rest.map((item, index) => (
-              <Item
-                key={item.id}
-                item={item}
-                index={index}
-                size="300"
-                history={this.props.history}
-                location={this.props.location}
-              />
-            ))}
-          </Grid>
+          <Sort sort={this.handleSort} />
+          <section className={styles.page}>
+            <ul className={styles.container}>
+              {this.state.movies.map((item, index) => (
+                <Item
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  size="500"
+                  history={this.props.history}
+                  location={this.props.location}
+                />
+              ))}
+            </ul>
+          </section>
         </Fragment>
       )
     );
