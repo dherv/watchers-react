@@ -19,3 +19,8 @@ export interface IMatch {
 export interface ILocation {
   pathname: string;
 }
+
+export interface ISort {
+  text: string;
+  value: string;
+}
