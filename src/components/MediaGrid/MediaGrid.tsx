@@ -5,7 +5,7 @@ import { IHistory, IData, ILocation } from "../../types/interfaces";
 
 import styles from "./MediaGrid.module.css";
 import { sortByDate, sortByNumber, sortByString } from "../../helpers/filters";
-import Sort from "../Sort";
+import Sort from "../Sort/Sort";
 import Api from "../../Api/Api";
 
 interface IProps {

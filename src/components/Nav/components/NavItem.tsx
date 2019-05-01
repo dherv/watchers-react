@@ -15,7 +15,7 @@ export default class NavItem extends PureComponent<IProps> {
   }
   render() {
     return (
-      <li>
+      <li className={styles.item}>
         <a className={styles.link} onClick={this.handleClick}>
           {this.props.item}
         </a>

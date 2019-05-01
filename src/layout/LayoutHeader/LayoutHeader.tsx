@@ -23,5 +23,5 @@ const Header = styled.header`
   padding: 0 4rem;
   margin-bottom: 0rem;
   background-color: #181717;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
 `;
