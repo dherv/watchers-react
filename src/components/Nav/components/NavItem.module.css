@@ -1,0 +1,7 @@
+.item {
+  display: inline-block;
+  margin: var(--margin);
+}
+.link {
+  cursor: pointer;
+}

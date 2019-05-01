@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import Item from "./MediaGridItem/MediaGridItem";
+import MediaGridItem from "./MediaGridItem/MediaGridItem";
 import styled from "styled-components";
 import { IHistory, IData, ILocation } from "../../types/interfaces";
 
 import styles from "./MediaGrid.module.css";
 import { sortByDate, sortByNumber, sortByString } from "../../helpers/filters";
-import Sort from "../Sort";
+import Sort from "../Sort/Sort";
 import Api from "../../Api/Api";
 
 interface IProps {
@@ -94,7 +94,7 @@ export default class MediaGrid extends Component<IProps, IState> {
           <section className={styles.page}>
             <ul className={styles.container}>
               {this.state.movies.map((item, index) => (
-                <Item
+                <MediaGridItem
                   key={item.id}
                   item={item}
                   index={index}

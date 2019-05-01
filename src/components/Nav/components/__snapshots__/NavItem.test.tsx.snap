@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem snapshot should match 1`] = `
+<li
+  className="item"
+>
+  <a
+    className="link"
+    onClick={[Function]}
+  >
+    item1
+  </a>
+</li>
+`;

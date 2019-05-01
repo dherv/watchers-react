@@ -1,0 +1,6 @@
+.list {
+  padding: var(--padding);
+  margin: var(--margin);
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid #4db6ac;
+}
