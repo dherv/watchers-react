@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from "react";
+import React, { PureComponent } from "react";
 import { IData, ILocation } from "../../types/interfaces";
 import styled from "styled-components";
 import Api from "../../Api/Api";
@@ -45,12 +45,13 @@ export default class MoviePage extends PureComponent<IProps, IState> {
     return (
       this.state.ready && (
         <Grid>
-          <img src={image} />
+          <img src={image} alt={`backdrop of ${item.title}`} />
           <Wrapper>
             <h1>{this.state.item.title}</h1>
             <div>
               <img
                 src={this.state.item.poster_path.replace("@size", `original`)}
+                alt={`poster of ${item.title}`}
               />
               <h5>{this.state.item.release_date}</h5>
             </div>
