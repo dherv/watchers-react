@@ -32,7 +32,7 @@ describe("NavItem", () => {
   });
   describe("snapshot", () => {
     test("should match", () => {
-      const tree = shallow(<NavItem {...props} />);
+      const tree = renderer.create(<NavItem {...props} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

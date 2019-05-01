@@ -29,7 +29,7 @@ describe("Nav", () => {
   });
   describe("snapshot", () => {
     test("should match", () => {
-      const tree = shallow(<Nav {...props} />);
+      const tree = renderer.create(<Nav {...props} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav snapshot should match 1`] = `
+exports[`Sort snapshot should match 1`] = `
 <nav>
   <ul>
     <li>
@@ -8,7 +8,7 @@ exports[`Nav snapshot should match 1`] = `
         className="link"
         onClick={[Function]}
       >
-        item1
+        date
       </a>
     </li>
     <li>
@@ -16,7 +16,15 @@ exports[`Nav snapshot should match 1`] = `
         className="link"
         onClick={[Function]}
       >
-        item2
+        rating
+      </a>
+    </li>
+    <li>
+      <a
+        className="link"
+        onClick={[Function]}
+      >
+        name
       </a>
     </li>
   </ul>
