@@ -1,15 +1,21 @@
-import React, { SFC, MouseEvent, PureComponent } from "react";
+import React, { SFC } from "react";
 import NavItem from "./components/NavItem";
 import styles from "./Nav.module.css";
+import { ISort } from "../../types/interfaces";
 
 const Nav: SFC<{
-  items: string[];
+  items: ISort[];
   onClick(item: string): void;
 }> = ({ items, onClick }) => (
   <nav>
     <ul className={styles.list}>
-      {items.map((item: string) => (
-        <NavItem key={item} onClick={onClick} item={item} />
+      {items.map((item: ISort) => (
+        <NavItem
+          key={item.value}
+          onClick={onClick}
+          text={item.text}
+          value={item.value}
+        />
       ))}
     </ul>
   </nav>

@@ -2,7 +2,8 @@ import React, { PureComponent } from "react";
 import styles from "./NavItem.module.css";
 
 interface IProps {
-  item: string;
+  text: string;
+  value: string;
   onClick(item: string): void;
 }
 export default class NavItem extends PureComponent<IProps> {
@@ -11,14 +12,16 @@ export default class NavItem extends PureComponent<IProps> {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.onClick(this.props.item);
+    this.props.onClick(this.props.value);
   }
+  // link can not be used anymore without an href, use div with role menuitem instead to display text:
+  //  https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
   render() {
     return (
       <li className={styles.item}>
-        <a className={styles.link} onClick={this.handleClick}>
-          {this.props.item}
-        </a>
+        <div role="menuitem" className={styles.link} onClick={this.handleClick}>
+          {this.props.text}
+        </div>
       </li>
     );
   }

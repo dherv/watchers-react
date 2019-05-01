@@ -1,5 +1,4 @@
-import React, { PureComponent, MouseEvent } from "react";
-import styled from "styled-components";
+import React, { PureComponent } from "react";
 import Nav from "../Nav/Nav";
 
 interface IProps {
@@ -15,8 +14,11 @@ export default class Sort extends PureComponent<IProps> {
     this.props.sort(item);
   }
   render() {
-    return (
-      <Nav items={["date", "rating", "name"]} onClick={this.handleClick} />
-    );
+    const items = [
+      { text: "date", value: "release_date" },
+      { text: "name", value: "title" },
+      { text: "rating", value: "rating" }
+    ];
+    return <Nav items={items} onClick={this.handleClick} />;
   }
 }
