@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from "react";
 import { IData, ILocation } from "../../types/interfaces";
-import api from "../../api";
 import styled from "styled-components";
+import Api from "../../Api/Api";
 
 interface IProps {
   size: string;
@@ -19,9 +19,16 @@ export default class MoviePage extends PureComponent<IProps, IState> {
       item: null,
       ready: false
     };
+    this.fetchMedia = this.fetchMedia.bind(this);
   }
   componentDidMount() {
-    api.fetchData(`${this.props.location.pathname}`).then((data: IData) =>
+    this.fetchMedia();
+  }
+
+  fetchMedia() {
+    const path = this.props.location.pathname;
+    const url = path.substring(1, path.length);
+    Api.get(url).then((data: IData) =>
       this.setState({
         item: data,
         ready: true
@@ -47,7 +54,6 @@ export default class MoviePage extends PureComponent<IProps, IState> {
               />
               <h5>{this.state.item.release_date}</h5>
             </div>
-
             <p>{this.state.item.description}</p>
           </Wrapper>
         </Grid>

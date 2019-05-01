@@ -2,10 +2,11 @@ import React, { Component, Fragment } from "react";
 import Item from "./MediaGridItem/MediaGridItem";
 import styled from "styled-components";
 import { IHistory, IData, ILocation } from "../../types/interfaces";
-import api from "../../api";
+
 import styles from "./MediaGrid.module.css";
 import { sortByDate, sortByNumber, sortByString } from "../../helpers/filters";
 import Sort from "../Sort";
+import Api from "../../Api/Api";
 
 interface IProps {
   history: IHistory;
@@ -42,7 +43,9 @@ export default class MediaGrid extends Component<IProps, IState> {
   }
 
   fetchAll() {
-    return api.fetchData(`${this.props.location.pathname}`).then(({ data }) => {
+    const path = this.props.location.pathname;
+    const url = path.substring(1, path.length);
+    return Api.get(url).then(({ data }) => {
       const movies = sortByDate(data.data, "release_date", "asc");
       this.setState({ movies, ready: true });
     });
