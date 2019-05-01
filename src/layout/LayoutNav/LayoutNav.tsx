@@ -1,4 +1,4 @@
-import React, { PureComponent, MouseEvent } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 

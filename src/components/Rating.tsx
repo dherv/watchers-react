@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import IconStar from "../icons/IconStar";
 import Circle from "../icons/IconCircle";
 
 interface IProps {

@@ -16,19 +16,17 @@ export default class IconMovie extends PureComponent<IProps> {
     };
 
     let fill = () => {
-      let color = "";
       const result = range();
       switch (result) {
         case 70:
-          return (color = "#2a9d90");
+          return "#2a9d90";
         case 60:
-          return (color = "#4bafd7");
+          return "#4bafd7";
         case 50:
-          return (color = "#cd3e50");
+          return "#cd3e50";
         default:
-          return (color = "#BDBDBD");
+          return "#BDBDBD";
       }
-      return color;
     };
 
     return (
@@ -50,8 +48,6 @@ export default class IconMovie extends PureComponent<IProps> {
               fontWeight: 600,
               fill: "#EEEEEE"
             }}
-            // stroke="green"
-            // stroke-width="1px"
             alignmentBaseline="central"
           >
             {rating}
