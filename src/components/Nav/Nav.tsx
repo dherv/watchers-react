@@ -8,7 +8,7 @@ const Nav: SFC<{
   <nav>
     <ul>
       {items.map((item: string) => (
-        <NavItem onClick={onClick} item={item} />
+        <NavItem key={item} onClick={onClick} item={item} />
       ))}
     </ul>
   </nav>
