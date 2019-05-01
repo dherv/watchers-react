@@ -6,9 +6,9 @@ export default class Api {
 
   static get(url: string): Promise<any> {
     return fetch(`${this.prefix}${url}`, {
-      // headers: {
-      //   Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`
-      // }
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`
+      }
     })
       .then(response => (response.ok ? response.json() : null))
       .catch(error => error);
@@ -17,7 +17,7 @@ export default class Api {
     return fetch(`${this.prefix}${url}`, {
       body: JSON.stringify(body),
       headers: {
-        // Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
+        Authorization: `Bearer ${sessionStorage.getItem("jwtToken")}`,
         "Content-type": "application/json"
       },
       method: "post"

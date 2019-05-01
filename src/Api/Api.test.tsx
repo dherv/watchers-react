@@ -1,4 +1,4 @@
-import { renderer, shallow, React, Api } from "../../test.config";
+import { renderer, shallow, React, Api } from "../test.config";
 
 // This test has been ignored in coverage and will not appear
 describe("Api", () => {
