@@ -4,7 +4,10 @@ import NavItem from "./components/NavItem";
 
 describe("Nav", () => {
   const props = {
-    items: ["item1", "item2"],
+    items: [
+      { text: "item1", value: "value1" },
+      { text: "item2", value: "value2" }
+    ],
     onClick: jest.fn()
   };
   const wrapper = shallow(<Nav {...props} />);

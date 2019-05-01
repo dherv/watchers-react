@@ -12,9 +12,9 @@ describe("Sort", () => {
       expect.assertions(2);
       expect(wrapper.find(Nav).length).toBe(1);
       expect(wrapper.find(Nav).prop("items")).toEqual([
-        "date",
-        "rating",
-        "name"
+        { text: "date", value: "release_date" },
+        { text: "name", value: "title" },
+        { text: "rating", value: "rating" }
       ]);
     });
     // Nav on click call handleClick

@@ -4,11 +4,12 @@ exports[`NavItem snapshot should match 1`] = `
 <li
   className="item"
 >
-  <a
+  <div
     className="link"
     onClick={[Function]}
+    role="menuitem"
   >
     item1
-  </a>
+  </div>
 </li>
 `;
