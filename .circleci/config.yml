@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/tmp
+    branches:
+      only:
+        - develop
+        - feature/circleci
+        - master
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn test
