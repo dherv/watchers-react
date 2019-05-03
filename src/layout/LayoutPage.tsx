@@ -1,12 +1,12 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import Header from "./LayoutHeader/LayoutHeader";
+import LayoutHeader from "./LayoutHeader/LayoutHeader";
 
-export default class LayoutPage extends PureComponent {
+export default class LayoutPage extends Component {
   render() {
     return (
       <Page>
-        <Header />
+        <LayoutHeader />
         <Main>{this.props.children}</Main>
       </Page>
     );
