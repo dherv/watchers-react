@@ -10,4 +10,5 @@ export default class LogoComponent extends PureComponent {
 const Logo = styled.h2`
   font-weight: 600;
   text-transform: uppercase;
+  padding: 8px 24px;
 `;

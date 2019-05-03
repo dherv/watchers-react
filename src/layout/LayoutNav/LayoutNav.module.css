@@ -7,7 +7,7 @@
 .link {
   display: block;
   height: 100%;
-  padding: 24px;
+  padding: 16px 24px;
   color: #fff;
   text-decoration: none;
   text-transform: capitalize;
@@ -15,4 +15,10 @@
   border-bottom: 4px solid transparent;
   cursor: pointer;
   transition: all 0.3s linear;
+}
+
+@media only screen and (max-width: 950px) {
+  .nav {
+    display: none;
+  }
 }

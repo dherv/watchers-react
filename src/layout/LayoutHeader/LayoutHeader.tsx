@@ -1,27 +1,15 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import LayoutNav from "../LayoutNav/LayoutNav";
 import Logo from "../../components/Logo";
-
-// ---------------
-interface IProps {}
+import styles from "./LayoutHeader.module.css";
 
 export default class LayoutHeader extends Component {
   render() {
     return (
-      <Header>
+      <header className={styles.header}>
         <Logo />
         <LayoutNav />
-      </Header>
+      </header>
     );
   }
 }
-// ---------------
-const Header = styled.header`
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  margin-bottom: 0rem;
-  background-color: #181717;
-  box-shadow: var(--shadow);
-`;
