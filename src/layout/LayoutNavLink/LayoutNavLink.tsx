@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
 import { NavLink } from "react-router-dom";
-import { INavLink } from "../../../types/interfaces";
-import styles from "../LayoutNav.module.css";
+import { INavLink } from "../../types/interfaces";
+import styles from "../LayoutNav/LayoutNav.module.css";
 
 const LayoutNavLink: SFC<{ link: INavLink }> = ({ link: { text, value } }) => (
   <NavLink

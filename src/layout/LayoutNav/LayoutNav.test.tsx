@@ -1,7 +1,8 @@
 import { renderer, shallow, React } from "../../test.config";
 import LayoutNav from "./LayoutNav";
 import { MemoryRouter } from "react-router";
-import LayoutNavLink from "./LayoutNavLink/LayoutNavLink";
+import LayoutNavLink from "../LayoutNavLink/LayoutNavLink";
+
 describe("LayoutNav", () => {
   const props = {};
   const links = [

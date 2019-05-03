@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./LayoutNav.module.css";
-import LayoutNavLink from "./LayoutNavLink/LayoutNavLink";
+import LayoutNavLink from "../LayoutNavLink/LayoutNavLink";
 
 export default class LayoutNav extends Component {
   render() {
