@@ -4,11 +4,11 @@ exports[`LayoutHeader snapshot should match 1`] = `
 <header
   className="header"
 >
-  <h1
+  <h2
     className="logo"
   >
     Watchers
-  </h1>
+  </h2>
   <nav
     className="nav"
   >
