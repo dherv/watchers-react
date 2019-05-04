@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
-import styled from "styled-components";
+import styles from "./Logo.module.css";
 
 export default class Logo extends PureComponent {
   render() {
-    return <h1 className="logo">Watchers</h1>;
+    return <h2 className={styles.logo}>Watchers</h2>;
   }
 }
