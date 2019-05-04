@@ -3,6 +3,13 @@ export interface IHistory {
 }
 
 export interface IData {
+  data: IMovie[];
+  count: number;
+  current_page: number;
+  next_page: number;
+  previous_page: number;
+}
+export interface IMovie {
   id: string;
   title: string;
   backdrop_path: string;

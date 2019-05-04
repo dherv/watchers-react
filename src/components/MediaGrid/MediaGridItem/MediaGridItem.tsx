@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { IHistory, IData, ILocation } from "../../../types/interfaces";
+import { IHistory, IData, ILocation, IMovie } from "../../../types/interfaces";
 import Card from "../../Card";
 import Avatar from "../../Avatar";
 import DateString from "../../DateString";
@@ -11,7 +11,7 @@ import styles from "../MediaGrid.module.css";
 interface IProps {
   history: IHistory;
   location: ILocation;
-  item: IData;
+  item: IMovie;
   index: number;
   size: string;
 }
