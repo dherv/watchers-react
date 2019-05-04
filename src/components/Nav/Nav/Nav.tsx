@@ -1,7 +1,7 @@
 import React, { SFC } from "react";
-import NavItem from "./components/NavItem";
+import NavItem from "../NavItem/NavItem";
 import styles from "./Nav.module.css";
-import { ISort } from "../../types/interfaces";
+import { ISort } from "../../../types/interfaces";
 
 const Nav: SFC<{
   items: ISort[];

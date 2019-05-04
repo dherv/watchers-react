@@ -1,6 +1,6 @@
-import { renderer, shallow, React } from "../../test.config";
+import { renderer, shallow, React } from "../../../test.config";
 import Nav from "./Nav";
-import NavItem from "./components/NavItem";
+import NavItem from "../NavItem/NavItem";
 
 describe("Nav", () => {
   const props = {
