@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Nav from "../Nav/Nav";
+import Nav from "../nav/Nav/Nav";
 
 interface IProps {
   sort: (type: string) => void;

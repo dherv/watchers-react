@@ -1,6 +1,6 @@
 import { renderer, shallow, React } from "../../test.config";
 import Sort from "./Sort";
-import Nav from "../Nav/Nav";
+import Nav from "../nav/Nav/Nav";
 describe("Sort", () => {
   const props = {
     sort: jest.fn()
