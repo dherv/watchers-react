@@ -1,65 +1,26 @@
-import React, { PureComponent } from "react";
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import React, { Component } from "react";
+import styles from "./LayoutNav.module.css";
+import LayoutNavLink from "../LayoutNavLink/LayoutNavLink";
 
-interface IProps {}
-
-export default class LayoutNav extends PureComponent<IProps> {
+export default class LayoutNav extends Component {
   render() {
+    const links = [
+      { text: "movies", value: "/movies" },
+      { text: "series", value: "/series" },
+      { text: "likes", value: "/likes" },
+      { text: "watchlist", value: "/watchlist" },
+      { text: "account", value: "/account" }
+    ];
     return (
-      <Nav>
-        <List>
-          <Item>
-            <Link
-              activeStyle={{
-                backgroundColor: "#121111",
-                borderBottom: "4px solid #2a9d90"
-              }}
-              to="/movies"
-            >
-              movies
-            </Link>
-          </Item>
-          <Item>
-            <Link
-              activeStyle={{
-                backgroundColor: "#121111",
-                borderBottom: "4px solid #2a9d90"
-              }}
-              to="/series"
-            >
-              series
-            </Link>
-          </Item>
-          <Item>
-            <Link to="/likes">likes</Link>
-          </Item>
-          <Item>
-            <Link to="/watchlist">watchlist</Link>
-          </Item>
-          <Item>
-            <Link to="/account">account</Link>
-          </Item>
-        </List>
-      </Nav>
+      <nav className={styles.nav}>
+        <ul className={styles.list}>
+          {links.map(link => (
+            <li key={link.text}>
+              <LayoutNavLink link={link} />
+            </li>
+          ))}
+        </ul>
+      </nav>
     );
   }
 }
-const Nav = styled.nav`
-  margin: 0 4rem;
-`;
-const List = styled.ul`
-  display: flex;
-`;
-const Item = styled.li``;
-const Link = styled(NavLink)`
-  display: block;
-  height: 100%;
-  padding: 2rem;
-  color: #fff;
-  text-decoration: none;
-  text-transform: capitalize;
-  border-bottom: 4px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s linear;
-`;

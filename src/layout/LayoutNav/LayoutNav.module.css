@@ -1,0 +1,24 @@
+.nav {
+  margin: 0 32px;
+}
+.list {
+  display: flex;
+}
+.link {
+  display: block;
+  height: 100%;
+  padding: 16px 24px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-bottom: 4px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+@media only screen and (max-width: 950px) {
+  .nav {
+    display: none;
+  }
+}

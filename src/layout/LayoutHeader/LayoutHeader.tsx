@@ -1,27 +1,15 @@
-import React, { PureComponent } from "react";
-import styled from "styled-components";
+import React, { Component } from "react";
 import LayoutNav from "../LayoutNav/LayoutNav";
-import Logo from "../../components/Logo";
+import Logo from "../../components/Logo/Logo";
+import styles from "./LayoutHeader.module.css";
 
-// ---------------
-interface IProps {}
-
-export default class LayoutHeader extends PureComponent {
+export default class LayoutHeader extends Component {
   render() {
     return (
-      <Header>
+      <header className={styles.header}>
         <Logo />
         <LayoutNav />
-      </Header>
+      </header>
     );
   }
 }
-// ---------------
-const Header = styled.header`
-  display: flex;
-  align-items: center;
-  padding: 0 4rem;
-  margin-bottom: 0rem;
-  background-color: #181717;
-  box-shadow: var(--shadow);
-`;

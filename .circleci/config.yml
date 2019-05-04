@@ -5,7 +5,7 @@ jobs:
     branches:
       only:
         - develop
-        - feature/circleci
+        - feature/*
         - master
     docker:
       - image: circleci/node

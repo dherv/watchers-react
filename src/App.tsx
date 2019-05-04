@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 // Components
 import HeroPage from "./views/HeroPage/HeroPage";
 import MoviePage from "./views/MoviePage/MoviePage";
-import LayoutPage from "./layout/LayoutPage";
+import LayoutPage from "./layout/LayoutPage/LayoutPage";
 
 export default class App extends Component {
   render() {

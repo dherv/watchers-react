@@ -24,3 +24,7 @@ export interface ISort {
   text: string;
   value: string;
 }
+export interface INavLink {
+  text: string;
+  value: string;
+}
