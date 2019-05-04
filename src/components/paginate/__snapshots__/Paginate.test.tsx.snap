@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginate snapshot should match 1`] = `
+<ul>
+  <li
+    onClick={[Function]}
+  >
+    1
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    2
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    3
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    4
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    5
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    6
+  </li>
+</ul>
+`;
