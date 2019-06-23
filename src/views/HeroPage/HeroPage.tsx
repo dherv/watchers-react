@@ -2,7 +2,7 @@ import React, { useState, useEffect, SFC, Fragment } from "react";
 import Sort from "../../components/Sort/Sort";
 import MediaGrid from "../../components/MediaGrid/MediaGrid";
 import Api from "../../Api/Api";
-import { IHistory, ILocation, IData, IMovie } from "../../types/interfaces";
+import { IHistory, ILocation, IMovie } from "../../types/interfaces";
 import Paginate from "../../components/paginate/Paginate";
 
 const HeroPage: SFC<{ history: IHistory; location: ILocation }> = ({
@@ -37,7 +37,6 @@ const HeroPage: SFC<{ history: IHistory; location: ILocation }> = ({
       )}?page=${current_page}&sort=${sort}&order=${order}`;
       return Api.get(url).then(
         ({ data, current_page, next_page, previous_page, count }) => {
-          console.log(data, current_page, next_page, previous_page, count);
           setMovies(data);
           setPage(current_page);
           setNextPage(next_page);

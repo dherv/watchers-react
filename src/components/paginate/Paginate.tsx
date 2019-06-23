@@ -1,4 +1,5 @@
 import React, { SFC } from "react";
+import styles from "./Paginate.module.css";
 
 interface IProps {
   count: number;
@@ -22,9 +23,13 @@ const Paginate: SFC<IProps> = ({
     onClick(page);
   };
   return (
-    <ul>
+    <ul className={styles.list}>
       {iterator.map((page: number) => (
-        <li key={page} onClick={() => handleClick(page)}>
+        <li
+          key={page}
+          className={styles.item}
+          onClick={() => handleClick(page)}
+        >
           {page}
         </li>
       ))}

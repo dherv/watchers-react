@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { IHistory, IData, ILocation, IMovie } from "../../../types/interfaces";
+import { IHistory, ILocation, IMovie } from "../../../types/interfaces";
 import Card from "../../Card";
 import Avatar from "../../Avatar";
 import DateString from "../../DateString";

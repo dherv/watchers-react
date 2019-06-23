@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+}
+.item {
+  width: 35px;
+  height: 35px;
+  margin: 12px;
+  background-color: #00897b;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  font-weight: 500;
+  cursor: pointer;
+}
