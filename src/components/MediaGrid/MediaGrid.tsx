@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import MediaGridItem from "./MediaGridItem/MediaGridItem";
-import { IHistory, ILocation, IData } from "../../types/interfaces";
+import { IHistory, ILocation, IMovie } from "../../types/interfaces";
 
 import styles from "./MediaGrid.module.css";
 
 interface IProps {
   history: IHistory;
   location: ILocation;
-  movies: IData[];
+  movies: IMovie[];
 }
 
 export default class MediaGrid extends Component<IProps> {

@@ -50,7 +50,10 @@ export default class MoviePage extends PureComponent<IProps, IState> {
             <h1>{this.state.item.title}</h1>
             <div>
               <img
-                src={this.state.item.poster_path.replace("@size", `original`)}
+                src={
+                  this.state.item.poster_path &&
+                  this.state.item.poster_path.replace("@size", `original`)
+                }
                 alt={`poster of ${item.title}`}
               />
               <h5>{this.state.item.release_date}</h5>
