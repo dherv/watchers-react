@@ -33,7 +33,7 @@ const Watchlist: SFC<{}> = () => {
       headers: {
         "Content-type": "application/json",
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTYxMjgzNTI4LCJqdGkiOiI5ZWQ5YTcxZThhNzc0ZWEzODFhN2RjYzU5ZjQxZWNiMSIsInVzZXJfaWQiOjN9.CXURqhKr-wxNdYKINPBTwL3YSaHVokpcS0oGAxaXGBo"
+          "Bearer <token>"
       },
       body: JSON.stringify({
         movie: movieFormat,
